@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantCare AI - Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 PlantCare AI</h1>
+            <p>Advanced Plant Disease Detection & Treatment Recommendations</p>
+        </div>
+
+        <div class="main-card">
+            <div class="upload-section">
+                <div class="upload-zone" id="upload-zone">
+                    <div class="upload-icon">📸</div>
+                    <div class="upload-text">
+                        <h3>Upload Plant Image</h3>
+                        <p>Drag and drop an image here, or click to select</p>
+                        <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+                            Choose Image
+                        </button>
+                    </div>
+                    <input type="file" id="file-input" accept="image/*" />
+                </div>
+            </div>
+
+            <div class="preview-section" id="preview-section">
+                <img id="image-preview" class="image-preview" alt="Plant preview" />
+                <button class="analyze-btn" id="analyze-btn">
+                    🔍 Analyze Plant Health
+                </button>
+                <button class="reset-btn">
+                    ↻ Upload New Image
+                </button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing your plant image...</p>
+            </div>
+
+            <div class="results-section" id="results-section">
+                <div class="result-card">
+                    <div class="disease-name" id="disease-name"></div>
+                    <div class="confidence-text" id="confidence-text"></div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                    <div class="recommendation" id="recommendation"></div>
+                </div>
+                <button class="reset-btn">
+                    ↻ Upload New Image
+                </button>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Accurate Detection</h3>
+                <p>AI-powered analysis with 95%+ accuracy for common plant diseases</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Results</h3>
+                <p>Get diagnosis and treatment recommendations in seconds</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Expert Guidance</h3>
+                <p>Detailed care instructions from agricultural specialists</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
