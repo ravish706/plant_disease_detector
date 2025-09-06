@@ -10,12 +10,12 @@ app = Flask(__name__)
 # Define constants
 IMG_WIDTH = 128
 IMG_HEIGHT = 128
-DATA_DIR = '/mnt/harsh_project/archive(1)/PlantVillage'
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Get class names from the directory structure
-class_names = sorted(os.listdir(DATA_DIR))
+class_names = ['Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight', 'Potato___healthy', 'Potato___Late_blight', 'Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_healthy', 'Tomato_Late_blight', 'Tomato_Leaf_Mold', 'Tomato_Septoria_leaf_spot', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato__Tomato_mosaic_virus', 'Tomato__Tomato_YellowLeaf__Curl_Virus']
+
 
 # Load the trained model
 print("Loading model...")
